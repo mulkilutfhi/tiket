@@ -56,21 +56,39 @@ And ('in detail penumpang1 i click sama dengan pemesan',()=>{
    cy.get('.switch').click()
 })
 And ('i choose kewarganegaraan',()=>{
-   cy.get('.flight-dropdown-searchbox > .title-flight-dropdown-searchbox').contains('Kewarganegaraan').click()
-   cy.get('input[placeholder="Cari negara Anda"]').type('ind')
-   cy.get('.list-data div').each(($el, index, $list)=>{
-
-     if ($el.text()==="indonesia")
-     {
-        $el.click()
-     }
+   cy.get('.flight-dropdown-searchbox > .title-flight-dropdown-searchbox').eq(1).click()
+   cy.get('.ul-list-menu')
+     .find('.list-data')
+     .contains('Indonesia').click()
 })
+And ('in detail penumpang2 i choose title',()=>{
+    cy.get('.input-flight-dropdown').eq(2).click()  
+    cy.get('.ul-list-menu>.list-data>.list-horizontal__middle').eq(0).click()
 })
-
-   //cy.get('.list-menu.list-menu-flight-dropdown-searchbox')
-     // .select('Indonesia')
-   
-   //cy.get('.list-horizontal__middle').contains('Indonesia').first().click({force:true})
-   
-
-
+And ('i submit name2',()=>{
+    cy.get('.input-list-autocomplete').eq(2)
+      .type('fake name')
+})
+And ('i choose kewarganegaraan2',()=>{
+   cy.get('.flight-dropdown-searchbox > .title-flight-dropdown-searchbox').eq(2).click()
+   cy.get('.ul-list-menu')
+     .find('.list-data')
+     .contains('Indonesia').click()
+})
+And ('i click lanjutkan ke pembayaran',()=>{
+   cy.get('.v3-btn.v3-btn__yellow.pull-right').click()
+   cy.get('.v3-btn.v3-btn__blue')
+})
+And('i click BCA VA',()=>{
+   cy.get('.payment-method-item')
+    .find('.method-type-name')
+    .contains('BCA Virtual Account').click()
+})
+And ('i click lanjutkan button',()=>{
+   cy.get('.payment-button-next-step')
+})
+When ('i click saya sudah membayar button',()=>{
+  cy.get('.col-xs-6')
+    .find('button[type="button"]')
+    .contains('Saya Sudah Membayar').click()
+})

@@ -16,7 +16,10 @@ Scenario: search ticket
    And i click PILIH ticket
    And in detail penumpang1 i click sama dengan pemesan
    And i choose kewarganegaraan 
-   And i click lanjutkan pembayaran 
+   And in detail penumpang2 i choose title
+   And i submit name2 
+   And i choose kewarganegaraan2
+   And i click lanjutkan ke pembayaran 
    And i click BCA VA
    And i click lanjutkan button
    When  i click saya sudah membayar button 

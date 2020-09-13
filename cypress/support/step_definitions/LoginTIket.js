@@ -27,3 +27,6 @@ Then ('verify profile icon should be appeared', ()=>{
       .wait(2000)
       .get('a[href="/myaccount"]').should('have.text','MLMulki Lutfhi')
 })
+
+
+
