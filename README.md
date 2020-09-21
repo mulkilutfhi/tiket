@@ -65,3 +65,14 @@ Run your Cypress Launcher the way you would usually do, for example:
 ./node_modules/.bin/cypress open
 ```
 
+### Folder BDD test case file
+```sh
+Cypress ->Integration->Flight.feature
+Cypress ->Integration->Train.feature
+```
+### Folder script code file
+```sh
+Cypress -> Support -> Step_definitions -> Flight.js
+Cypress -> Support -> Step_definition -> Train.js
+```
+
